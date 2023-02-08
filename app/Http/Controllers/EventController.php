@@ -2,21 +2,15 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Event;
 use Illuminate\Http\Request;
 
 class EventController extends Controller
 {
     public function index()
     {
-        $name = $_GET['name'] ?? 'Geovane';
-        $age = 23;
-        $namesArray = ['Geovane', 'João', 'Maria'];
-        return view('welcome', 
-        [
-            'name' => $name, 
-            'age' => $age,
-            'namesArray' => $namesArray
-        ]);
+        $events = Event::all();
+        return view('welcome', ['events' => $events]);
     }
 
     public function create()
@@ -42,7 +36,8 @@ class EventController extends Controller
             ['id' => 8, 'name' => 'Product 8', 'price' => 80],
             ['id' => 9, 'name' => 'Product 9', 'price' => 90],
             ['id' => 10, 'name' => 'Product 10', 'price' => 100],
+            ['id' => 11, 'name' => 'Product 11', 'price' => 110],
         ];
-        return view('products', ['product' => $products[$id]]);
+        return view('products', ['products' => $products]);
     }
 }
