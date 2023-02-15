@@ -21,20 +21,9 @@ return new class extends Migration
             $table->text('description');
             $table->string('city');
             $table->boolean('private');
+            $table->string('image')->nullable();
             //insert data in database
         });
-        $this->seed();
-    }
-
-    //insert data in database
-    public function seed()
-    {
-        DB::table('events')->insert([
-            'title' => 'Laravel 8',
-            'description' => 'Laravel 8 is the latest version of Laravel',
-            'city' => 'Lagos',
-            'private' => false,
-        ]);
     }
 
     /**

@@ -24,26 +24,35 @@
             <nav class="navbar navbar-expand-lg navbar-light">
                 <div class="collapse navbar-collapse" id="navbar">
                     <a href="/" class="navbar-brand">
-                        <img src="\img\logo-social.png" alt="HDV Events">
+                        <img src="/img/hdcevents_logo.svg" alt="HDV Events">
                     </a>
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Eventos</a>
+                            <a href="/" class="nav-link">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Criar eventos</a>
+                            <a href="/events/create" class="nav-link">Created events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Entrar</a>
+                            <a href="/" class="nav-link">Log in</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/" class="nav-link">Cadastrar</a>
+                            <a href="/" class="nav-link">Sing in</a>
                         </li>
                     </ul>
                 </div>
             </nav>
         </header>
-        @yield('content')
+        <main>
+            <div class="container-fluid">
+                <div class="row">
+                    @if (session('msg'))
+                        <p class="msg">{{session('msg')}}</p>                     
+                    @endif
+                    @yield('content')
+                </div>
+            </div>
+        </main>
         <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
         <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
         <footer><p>HDC events &copy; 2023</p></footer>

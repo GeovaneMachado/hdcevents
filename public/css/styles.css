@@ -1,6 +1,18 @@
 * { 
     font-family: 'Roboto','Open Sans', sans-serif;
 }
+
+body {
+    min-height: 100vh;
+    padding-bottom: 100px;
+    position: relative;
+}
+
+header {
+    background-color: #fff;
+
+}
+
 h1 {
     font-size: 30px;
     font-weight: 400;
@@ -10,7 +22,206 @@ h1 {
     text-align: center;
     text-transform: uppercase;
 }
+.row {
+    margin: 0;
+}
 
+.container-fluid {
+    margin: 0 auto;
+    max-width: 960px;
+    padding: 0 15px;
+    width: 100%;
+}
+
+.btn-primary {
+    background-color: #F2A340;
+    border: 2px solid #C28008;
+}
+
+.btn-primary:hover {
+    background-color: #C28008;
+    border: 2px solid #C28008;
+}
+
+.msg {
+    background-color: #D4EDDA;
+    color: #155724;
+    border: 1px solid #C3E6CB;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0px;
+}
+/* NAVBAR */
+#navbar {
+    justify-content: space-between;
+    background-color: #fff;
+    border-bottom: 1px solid #e5e5e5;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    padding: 5px 0;
+}
 #navbar img{
-    width: 90px;
+    width: 40px;
+}
+
+#navbar a{
+    color: #757575;
+    font-size: 14px;
+}
+
+#navbar a:hover{
+    color: #f2a340;
+}
+
+/*Search container*/
+
+#search-container {
+    background-image: url('https://raw.githubusercontent.com/matheusbattisti/curso_laravel/Aula_16/public/img/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 400px;
+    padding: 50px;
+    text-align: center;
+}
+
+#search-container h1 {
+    color: #f2a340;
+    margin-bottom: 30px;
+    font-size: 40px;
+    font-weight: 900;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+#search-container form{
+    width: 50%;
+    margin: 0 auto;
+}
+
+/*Events list*/
+
+#events-container {
+    padding: 50px;
+}
+
+#events-container h2 {
+    margin-bottom: 10px;
+}
+
+#events-container .subtitle {
+    color: #757575;
+    margin-bottom: 30px;
+}
+
+#card-container {
+    display: flex;
+}
+
+#events-container .card {
+    flex: 1 1 24%;
+    max-width: 25%;
+    border-radius: 10px;
+    padding: 0;
+    margin: .5%;
+}
+
+#events-container .card img {
+    max-height: 150px;
+    min-height: 150px;
+    border-radius: 10px 10px 0 0;
+}
+
+.card .card-date {
+    font-size: 12px;
+    color: #ccc;
+}
+
+.card .card-title {
+    color: #212121;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+
+.card-participants {
+    font-size: 14px;
+    color: #757575;
+}
+/** Event details */
+#event-create-container {
+    padding: 30px;
+}
+
+#event-create-container label{
+    font-weight: bold;
+}
+
+#event-create-container input, 
+#event-create-container select,
+#event-create-container textarea{
+    font-size: 12px;
+}
+
+/* Event page*/
+
+#image-container, #info-container {
+    margin-top: 30px;
+}
+
+#image-container img {
+    border-radius: 10px;
+}
+
+#info-container h1 {
+    font-size: 36px;
+    font-weight: 900;
+}
+
+#info-container p {
+    display: flex;
+    align-items: center;
+    color: #757575;
+    font-size: 14px;
+    margin: 0;
+}
+
+#info-container h3, #description-container h3 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+#info-container ion-icon {
+    font-size: 20px;
+    color: #F2A340;
+}
+
+#info-container #event-submit {
+    margin: 20px 0;
+}
+
+#items-list {
+    list-style: none;
+    padding-left: 0;
+}
+
+#items-list li {
+    display: flex;
+}
+
+
+/** Footer */
+
+footer {
+    text-align: center;
+    background-color: #353e48;
+    color: #fff;
+    padding: 30px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 0;
 }
