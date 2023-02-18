@@ -1,16 +1,20 @@
 @extends('layouts.main')
 
-@section('title', 'Home')
+@section('title', 'Dashboard')
 
 @section('content')
 <div id="search-container" class="col-md-12">
     <h1>Find a event near you</h1>
-    <form action="" method="GET">
+    <form action="/" method="GET">
         <input type="text" id="search" name="search" class="form-control" placeholder="Search...">
     </form>
 </div>
 <div id="events-container" class="col-md-12">
-    <h2>Next events</h2>
+    @if ($search)
+        <h2>Search results: {{$search}}</h2>
+    @else
+        <h2>Next events</h2>
+    @endif    
     <p class="subtitle">See the events of the next days</p>
     <div id="cards-container" class="row">
         @foreach ($events as $event)
@@ -25,8 +29,10 @@
         </div>
         @endforeach
     </div>
-    @if (count($events) == 0)
-    <p>No events found...</p>
+    @if (count($events) == 0 && $search)
+        <p>No events found for <strong>{{$search}}</strong><br><a href="/">view all events</a></p>
+    @elseif (count($events) == 0)
+        <p>No events found...</p>
     @endif
 </div>
 @endsection
