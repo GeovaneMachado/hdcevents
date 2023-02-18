@@ -15,7 +15,7 @@
             <p><ion-icon name="sparkles-outline"></ion-icon>Event: {{ $event->title }}</p>
             <p class="event-city"><ion-icon name="location-outline"></ion-icon>City: {{ $event->city }}</p>
             <p class="event-participants"><ion-icon name="people-outline"></ion-icon>Particpants: {{ $event->particpants }}</p>
-            <p class="event-owner"><ion-icon name="star-outline"></ion-icon>Owner: {{ $event->owner }}</p>
+            <p class="event-owner"><ion-icon name="star-outline"></ion-icon>Owner: {{ $eventOwner['name']}}</p>
             <a href="#" class="btn btn-primary" id="event-submit">Confirm attendance</a>
             <h3>Infrastructure:</h3>
             <ul id="items-list">
