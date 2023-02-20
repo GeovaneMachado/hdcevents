@@ -31,7 +31,7 @@
                             <a href="/" class="nav-link">Events</a>
                         </li>
                         <li class="nav-item">
-                            <a href="/events/create" class="nav-link">Created events</a>
+                            <a href="/create" class="nav-link">Created events</a>
                         </li>
                         @auth
                             <li class="nav-item">
