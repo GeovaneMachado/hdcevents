@@ -23,6 +23,17 @@ return new class extends Migration
             $table->boolean('private');
             $table->string('image')->nullable();
             //insert data in database
+            /*
+                INSERT INTO events (title, description, city, private, image, date, user_id) 
+                VALUES('Laravel', 
+                    'testes',
+                    'chapecó-sc', 
+                    'true', 
+                    '523bfd3f74a62dd8a2232a841c8d57ac.jpg',
+                    '2023-02-26',
+                1)
+            */
+            
         });
     }
 

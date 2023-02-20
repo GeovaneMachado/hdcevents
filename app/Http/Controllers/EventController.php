@@ -75,12 +75,29 @@ class EventController extends Controller
         return view('events.edit', ['event' => $event]);
     }
 
+    public function update(Request $request)
+    {
+        $data = $request->all();
+        if ($request->hasFile('image') && $request->file('image')->isValid()) {
+            if ($request->image->extension() == 'jpg' || $request->image->extension() == 'png') {
+                $requestImage = $request->image;
+                $extension = $requestImage->extension();
+                $imageName = md5($requestImage->getClientOriginalName() . strtotime("now")) . "." . $extension;
+                $requestImage->move(public_path('img/events'), $imageName);
+                $data['image'] = $imageName;
+            }
+        }
+        Event::findOrFail($request->id)->update($data);
+        return redirect('/dashboard')->with('msg', 'Event updated successfully!');
+    }
+
     public function dashboard()
     {
         $user = auth()->user();
         $events = $user->events;
         return view('events.dashboard', ['events' => $events]);
     }
+
 
     public function products($id = null)
     {

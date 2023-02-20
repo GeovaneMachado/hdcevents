@@ -33,7 +33,11 @@
     </div>
     <div>
         <a href="/events/edit/{{ $event->id }}" class="btn btn-primary">Edit</a>
-        <a href="/events/destroy/{{ $event->id }}" class="btn btn-danger">Delete</a>
+        <form action="/events/destroy/{{$event->id}}" method="POST" class="delete-form" style="display:inline-block">
+            @csrf
+            @method('DELETE')
+            <button type="submit" class="btn btn-danger delete-btn" value="Delete"><ion-icon name="trash-outline"></ion-icon>Delete</button>
+        </form>
     </div>
 </div>
 @endsection

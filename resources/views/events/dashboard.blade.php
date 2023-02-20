@@ -25,9 +25,8 @@
                         <td><a href="/events/{{$event->id}}">{{$event->title}}</a></td>
                         <td>0</td>
                         <td>
-                            {{-- <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn">Edit</a> --}}
-                            <a href="#" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Edit</a>
-                            <form action="/events/{{$event->id}}" method="POST" class="delete-form">
+                            <a href="/events/edit/{{$event->id}}" class="btn btn-info edit-btn"><ion-icon name="create-outline"></ion-icon>Edit</a>
+                            <form action="/events/destroy/{{$event->id}}" method="POST" class="delete-form">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger delete-btn" value="Delete"><ion-icon name="trash-outline"></ion-icon>Delete</button>
@@ -38,7 +37,7 @@
             </tbody>
         </table>
     @else
-        <p>You don't have events yet...<br><a href="/events/create">Creaetd new events</a></p>
+        <p>You don't have events yet...<br><a href="/events/create">Created new events</a></p>
     @endif
 
 </div>
